@@ -1,0 +1,32 @@
+<mat-card class="p-3 sm:p-7">
+
+  <form class="flex flex-column" (ngSubmit)="onLogin()" [formGroup]="loginForm">
+
+  <mat-card-title class="mb-7 text-center">Inicio de sesion</mat-card-title>
+
+  <mat-form-field>
+    <mat-label>Correo electronico:</mat-label>
+    <input required formControlName="email" matInput placeholder="Ingrese un correo" type="email">
+    <mat-icon matSuffix>mail</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Contraseña</mat-label>
+    <input required formControlName="password" matInput placeholder="Ingrese una contraseña" [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button type="submit" mat-button mat-flat-button color="primary">
+    <mat-icon>save</mat-icon>
+    Ingresar
+  </button>
+
+  <div class="flex justify-content-center mt-5">
+    <a routerLink="/auth/new-account">¿Ya tienes cuenta?</a>
+  </div>
+
+  </form>
+
+</mat-card>

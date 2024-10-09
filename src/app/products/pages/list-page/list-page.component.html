@@ -1,0 +1,10 @@
+<h1 class="pt-3 px-2">Listado de productos</h1>
+
+<mat-divider></mat-divider>
+
+<div class="grid mb-8 p-2">
+
+  <div class="col-12 sm:col-4 md:col-3 xl:col-3" *ngFor="let product of products">
+    <products-product-card [product]="product"></products-product-card>
+  </div>
+</div>

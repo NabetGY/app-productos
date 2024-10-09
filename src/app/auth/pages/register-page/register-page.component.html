@@ -1,0 +1,43 @@
+<mat-card>
+
+  <form class="flex flex-column p-5" (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+
+  <mat-card-title class="mb-7 text-center">Registrate Ya</mat-card-title>
+
+
+  <mat-form-field>
+    <mat-label>Nombre de usuario:</mat-label>
+    <input formControlName="username" matInput placeholder="Ingrese un nombre de usuario" type="text" required>
+    <mat-icon matSuffix>account_circle</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Correo electronico:</mat-label>
+    <input formControlName="email" matInput placeholder="ingrese un correo" type="email" required>
+    <mat-icon matSuffix>mail</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Contraseña</mat-label>
+    <input formControlName="password" matInput placeholder="Ingrese una contraseña" [type]="hide ? 'password' : 'text'" required>
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
+
+  <mat-checkbox class="mb-3 align-items-center" color="primary" formControlName="isAgree" required>Acepta los terminos y condiciones</mat-checkbox>
+
+
+  <button type="submit" mat-button mat-flat-button color="primary">
+    <mat-icon>save</mat-icon>
+    Crear cuenta
+  </button>
+
+  <div class="flex justify-content-center mt-5">
+    <a routerLink="/auth/login">¿No tienes cuenta?</a>
+  </div>
+
+  </form>
+
+</mat-card>

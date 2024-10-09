@@ -1,0 +1,42 @@
+<mat-card class="shadow-2 hover:shadow-8">
+  <mat-card-header>
+    <mat-card-title> {{ product.title }} </mat-card-title>
+    <mat-card-subtitle> {{product.category }} </mat-card-subtitle>
+  </mat-card-header>
+
+  <!-- img -->
+   <img [src]="product.images" [alt]="product.title" mat-card-image>
+
+  <mat-card-content class=mt-2>
+    <h4>Fabricante {{ product.maker }} </h4>
+    <p>
+<!--       <strong>Precio</strong> {{ product.price }}
+      <br> -->
+      <mat-chip-listbox>
+        <mat-chip>
+          Precio por unidad: <strong>{{ product.price | currency }}</strong>
+        </mat-chip>
+      </mat-chip-listbox>
+    </p>
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-actions>
+
+    <button mat-stroked-button mat-raised color="primary" [routerLink]="['/products/edit', product.id]" >
+      <mat-icon>edit</mat-icon>
+      Editar
+    </button>
+
+    <span class="spacer"></span>
+
+    <button mat-stroked-button mat-raised  [routerLink]="['/products', product.id]" >
+      <mat-icon>more_horiz</mat-icon>
+      Mas
+    </button>
+
+
+  </mat-card-actions>
+
+</mat-card>
