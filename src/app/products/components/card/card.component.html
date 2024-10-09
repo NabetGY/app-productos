@@ -5,13 +5,12 @@
   </mat-card-header>
 
   <!-- img -->
-   <img [src]="product.images" [alt]="product.title" mat-card-image>
+   <img [src]="product.images  || 'https://cdn.icon-icons.com/icons2/3001/PNG/512/default_filetype_file_empty_document_icon_187718.png'" [alt]="product.title" mat-card-image>
 
   <mat-card-content class=mt-2>
     <h4>Fabricante {{ product.maker }} </h4>
     <p>
-<!--       <strong>Precio</strong> {{ product.price }}
-      <br> -->
+
       <mat-chip-listbox>
         <mat-chip>
           Precio por unidad: <strong>{{ product.price | currency }}</strong>

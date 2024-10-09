@@ -15,7 +15,7 @@
       <mat-card-subtitle> {{ product.category }} </mat-card-subtitle>
     </mat-card-header>
 
-    <img class="pb-5" [src]="product.images" [alt]="product.title" mat-card-image>
+    <img class="pb-5" [src]="product.images  || 'https://cdn.icon-icons.com/icons2/3001/PNG/512/default_filetype_file_empty_document_icon_187718.png'" [alt]="product.title" mat-card-image>
 
   </mat-card>
 
